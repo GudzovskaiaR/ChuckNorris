@@ -6,15 +6,20 @@ const divSearch = document.querySelector(".searchArea");
 const divCategories = document.querySelector(".main-form__radio-buttons");
 const btnSearch = document.querySelector("#radio_3");
 const divFavorite = document.querySelector(".selected-jokes");
+const arrayFavoriteJoke = JSON.parse(localStorage.getItem("arrayJoke")) || [];
+
 
 // Удаление активного сердечка
 function removeFavoriteJoke(e) {
   const redFavoriteJoke = e.currentTarget.closest(".main-form__joke");
   const idFavoriteJoke = String(redFavoriteJoke.id);
-console.log(idFavoriteJoke)
-  const removeJoke = divFavorite.querySelector(`#${idFavoriteJoke}`);
-  console.log(removeJoke)
-  removeJoke.remove();
+  arrayFavoriteJoke.forEach((item, index)=>{
+    if(item.indexOf(idFavoriteJoke)>0){
+      arrayFavoriteJoke.splice(index)
+    }
+    });
+    renderFavoriteJoke(arrayFavoriteJoke);
+
   redFavoriteJoke.querySelector(
     ".joke-favoriteSymbol"
   ).innerHTML = ` <img class="heart" src="img/h.png" alt="">`;
@@ -34,21 +39,35 @@ function activeHeart(mainDivHeart) {
 // Добавляем выбранные шутки
 function addFavoriteJoke(e) {
   const favoriteJoke = e.currentTarget
-    .closest(".main-form__joke")
+     .closest(".main-form__joke")
+     
+
     .cloneNode(true);
 
   favoriteJoke.className = "formFavorite";
   favoriteJoke.querySelector(".img-massage").src = "img/message2.png";
   favoriteJoke.querySelector(".heart").src = "img/heart.png";
-  favoriteJoke.querySelector(".footer-category").remove();
 
-  divFavorite.insertAdjacentElement("afterbegin", favoriteJoke);
+  
   activeHeart(e.currentTarget.closest(".main-form__joke"));
+  
+  arrayFavoriteJoke.push(favoriteJoke.outerHTML);
+ 
+  renderFavoriteJoke(arrayFavoriteJoke);
+
+  
+}
+
+// Рендер выбранной шутки
+function renderFavoriteJoke(favoriteJokes){
+ 
+  localStorage.setItem("arrayJoke", JSON.stringify(favoriteJokes));
+  divFavorite.innerHTML =  favoriteJokes.join('');
+  
 }
 // Рендер шутки
 function renderJoke(objectJoke) {
   const currentDate = new Date();
-
   const jokeDate = new Date(`${objectJoke.updated_at}`);
   const updateTime = Math.round(
     (currentDate.getTime() - jokeDate.getTime()) / 3600000
@@ -63,7 +82,9 @@ function renderJoke(objectJoke) {
     </div>
     <div class="joke-text">
      <div class="joke-text__link">
-         <a href="${objectJoke.url}"><span>ID:</span>${String(objectJoke.id)} </a>
+         <a href="${objectJoke.url}"><span>ID:</span>${String(
+      objectJoke.id
+    )} </a>
          <img src="img/link.png" alt="">
      </div>
      <div class="joke-paragraph"><p>${objectJoke.value}</p>
@@ -81,7 +102,6 @@ function renderJoke(objectJoke) {
  </div>`
   );
   const btnFavorite = document.querySelectorAll(".heart");
-
   btnFavorite.forEach((item) => {
     item.addEventListener("click", addFavoriteJoke);
   });
@@ -91,7 +111,6 @@ function renderJoke(objectJoke) {
 async function getRandomJoke() {
   const random = await fetch("https://api.chucknorris.io/jokes/random");
   const randomJoke = await random.json();
-
   renderJoke(randomJoke);
 }
 
@@ -159,12 +178,12 @@ function chosenCategory(e) {
   const currentBtnActive = document.querySelector(".active");
 
   if (currentBtnActive) {
-    // currentBtnActive.removeEventListener('click', chosenCategory)
+   
     currentBtnActive.classList.remove("active");
   }
   e.currentTarget.classList.add("active");
 
-  // console.log(btnActive)
+ 
   btnGetJoke.addEventListener("click", getCategoryJoke);
 }
 // Получение поля поиска
@@ -186,3 +205,4 @@ btnRandom.addEventListener("click", (e) => {
 
 btnCategory.addEventListener("click", getCategories);
 btnSearch.addEventListener("click", getSearch);
+renderFavoriteJoke(arrayFavoriteJoke);
