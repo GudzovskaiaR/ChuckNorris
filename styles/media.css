@@ -1,0 +1,165 @@
+@media (max-width: 500px) {
+  .main-container {
+    width: 380px;
+    height: 1194px;
+    display: flex;
+    margin: 0 auto;
+  }
+  .main-container__main-menu {
+    width: 380px;
+    height: 1103px;
+    background-color: #ffffff;
+    overflow: scroll;
+    padding: 20px 20px 71px 20px;
+  }
+  .menu {
+    display: flex;
+  }
+  .img {
+    background-color: #ffffff;
+  }
+  .input {
+    width: 300px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 2px solid #333333;
+  }
+  .main-form__joke {
+    display: flex;
+    width: 340px;
+    padding-bottom: 45px;
+    padding-right: 40px;
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .joke-text {
+    width: 240px;
+    padding: 0;
+  }
+  .joke-message {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 47px;
+  }
+  .joke-text__link {
+    margin-top: 47px;
+
+    margin-top: 47px;
+    font-size: 10px;
+  }
+
+  span {
+    color: #ababab;
+  }
+  .joke-favoriteSymbol {
+    margin-top: 40px;
+  }
+  .joke-paragraph {
+    margin-left: 20px;
+
+    line-height: 26px;
+  }
+
+  .joke-text__footer {
+    display: inline-block;
+  }
+  .joke-text__footer span {
+    font-size: 10px;
+    font-weight: 500;
+    color: #ababab;
+  }
+
+  .main-container__favorite-menu {
+    width: 380px;
+    height: 100%;
+    padding: 0px;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+   overflow: auto;
+  }
+  .main-container__favorite-menu.active{
+    opacity: 100;
+    visibility: visible;
+  }
+
+  .headerFavorite {
+    display: flex;
+    align-items: center;
+    margin-left: 238px;
+    margin-top: 20px;
+    
+
+  }
+  /* .menuFavorite {
+    display: flex;
+    align-items: center;
+  } */
+
+  .header-h2 {
+    opacity: 0;
+  }
+  .imgFavorite {
+    display: block;
+    margin-right: 10px;
+  }
+
+  .formFavorite {
+    display: flex;
+    width: 340px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-left: 20px;
+    box-shadow: 0px 4px 6px 0px #0000001a;
+  }
+  .formFavorite .joke-message {
+    margin-left: 20px;
+    margin-top: 47px;
+    width: 40px;
+    height: 40px;
+  }
+  .formFavorite .joke-text {
+    width: 240px;
+    /* margin-left: 20px;
+        margin-top: 47px; */
+  }
+  .formFavorite .joke-paragraph {
+    margin-left: 0;
+    width: 240px;
+  }
+  .formFavorite .joke-paragraph p {
+    color: #333333;
+    font-size: 14px;
+    font-style: 400;
+    line-height: 20px;
+margin-bottom: 0;
+  }
+  .formFavorite .footer-time{
+    margin-bottom: 20px;
+  }
+  .formFavorite .footer-time p {
+    font-size: 10px;
+    font-weight: 400;
+    color: #ababab;
+  }
+  .formFavorite .footer-category{
+   display: none;
+  }
+  .formFavorite .joke-favoriteSymbol {
+    width: 20px;
+    height: 17px;
+    margin-top: 20px;
+    margin-right: -20px;
+  }
+
+  .formFavorite .selected-jokes{
+    overflow: scroll;
+  }
+
+}
