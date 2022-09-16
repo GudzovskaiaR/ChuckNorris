@@ -1,334 +1,378 @@
 /*--------------------------------Обнуление------------------------------------------------------------------------------*/
 * {
-    padding: 0;
-    margin: 0;
-    border: 0;
-  }
-  *,
-  *:before,
-  *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  :focus,
-  :active {
-    outline: none;
-  }
-  a:focus,
-  a:active {
-    outline: none;
-  }
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------------*/
+body {
+  font-family: Roboto;
+  color: #333333;
+}
+
+.main-container {
+  width: 1440px;
+  height: 900px;
+  display: flex;
+  margin: 0 auto;
+}
+.main-container__main-menu {
+  width: 960px;
+  height: 900px;
+  background-color: #ffffff;
+  padding-left: 140px;
+  overflow: scroll;
+}
+.header{
+  display: flex;
+  align-items: center;
+ 
+  margin-top: 40px;
+  justify-content: space-between;
+}
+.menu{
+ display: none;
   
-  nav,
-  footer,
-  header,
-  aside {
-    display: block;
-  }
+  align-items: center;
+  justify-content: space-between;
+  width: 122px;
+  height: 28px;
+ 
+ 
+
+}
+.img{
+  width: 28px;
+  height: 28px;
+}
+
+
+.main-container__main-menu p {
+  font-size:24px;
+  font-weight: medium 500;
+  line-height: 44px;
+}
+.menu-paragraph p{
+  font-size: 20px;
+  font-weight: 400;
+  color:#ABABAB;
+}
+h2 {
+  font-weight: bold;
+  font-size: 20px;
+ 
+}
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 78px;
+}
+
+.main-form__radio1,
+.main-form__radio2,
+.main-form__radio3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+}
+.main-form__radio1 {
+  margin-top: 43px;
+}
+.main-form__radio2 {
+  margin-top: 10px;
+}
+
+
+.buttons-category {
+  width: 85px;
+  height: 28px;
+  border-radius: 6px;
+  color: #ababab;
+  font-size: 12px;
+  font-weight: 400;
+  border: 2px solid #f8f8f8;
+  text-align: center;
+  padding: 6px 15px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  transition: 0.5s;
+}
+.buttons-category:hover {
+  background-color: #1b269f;
+  color: #333333;
+}
+.active {
+  background-color: #3917c1;
+  color: #333333;
+}
+
+.button-celebrity {
+  width: 107px;
+}
+.buttons-dev {
+  width: 57px;
+}
+
+.buttonGetJoke {
+  width: 152px;
+  height: 42px;
+  background-color: #7291ff;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 10px 40px;
+}
+
+.main-form__joke {
+  display: flex;
+  width: 680px;
+  padding-bottom: 45px;
+  padding-right: 40px;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.joke-message {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-left: 40px;
+  margin-top: 67px;
+}
+.joke-text {
+  width: 540px;
+}
+.joke-text p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.joke-text__link {
+  margin-left: 20px;
+  margin-top: 67px;
+  font-size: 10px;
+}
+a {
+  color: #8ea7ff;
+  margin-bottom: 5px;
+ 
+}
+
+span {
+  color: #ababab;
+}
+.joke-text__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 23px;
+}
+.joke-paragraph {
+  margin-left: 20px;
+
+  line-height: 26px;
+}
+.footer-time p {
+  font-size: 10px;
+  font-weight: 400;
+  color: #ababab;
+}
+.joke-text__footer span {
+  font-size: 10px;
+  font-weight: 500;
+  color: #ababab;
+}
+.footer-category {
+  width: 107px;
+  height: 24px;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.footer-category p {
+  color: #333333;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+}
+.joke-favoriteSymbol {
+  margin-top: 40px;
+}
+.main-container__favorite-menu {
+  width: 480px;
+  height: 900px;
+  background-color: #f8f8f8;
+  overflow: scroll;
+}
+.main-container__favorite-menu h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #ababab;
+  margin-left: 20px;
   
-  html,
-  body {
-    height: 100%;
-    width: 100%;
-    font-size: 100%;
-    line-height: 1;
-    font-size: 14px;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-  }
-  input,
-  button,
-  textarea {
-    font-family: inherit;
-  }
-  
-  input::-ms-clear {
-    display: none;
-  }
-  button {
-    cursor: pointer;
-  }
-  button::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-  }
-  a,
-  a:visited {
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: none;
-  }
-  ul li {
-    list-style: none;
-  }
-  img {
-    vertical-align: top;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: inherit;
-    font-weight: 400;
-  }
-  /*----------------------------------------------------------------------------------------------------------------------------------------------------*/
-  body {
-    font-family: Roboto;
-    color: #333333;
-  }
-  .wrapper {
-  }
-  .main-container {
-    width: 1440px;
-    height: 900px;
-    display: flex;
-    margin: 0 auto;
-  }
-  .main-container__main-menu {
-    width: 960px;
-    height: 900px;
-    background-color: #ffffff;
-    padding-left: 140px;
-    overflow: scroll;
-  }
-  .main-container__main-menu p {
-    font-size: 24px;
-    font-weight: medium 500;
-    line-height: 44px;
-  }
-  h2 {
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 40px;
-  }
-  h1 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-top: 78px;
-  }
-  
-  .main-form__radio1,
-  .main-form__radio2,
-  .main-form__radio3 {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26px;
-  }
-  .main-form__radio1 {
-    margin-top: 43px;
-  }
-  .main-form__radio2 {
-    margin-top: 10px;
-  }
-  
-  .buttons-category {
-    width: 85px;
-    height: 28px;
-    border-radius: 6px;
-    color: #ababab;
-    font-size: 12px;
-    font-weight: 400;
-    border: 2px solid #f8f8f8;
-    text-align: center;
-    padding: 6px 15px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    transition: 0.5s;
-  }
-  .buttons-category:hover {
-    background-color: #1b269f;
-    color: #333333;
-  }
-  .active {
-    background-color: #3917c1;
-    color: #333333;
-  }
-  
-  .button-celebrity {
-    width: 107px;
-  }
-  .buttons-dev {
-    width: 57px;
-  }
-  
-  .buttonGetJoke {
-    width: 152px;
-    height: 42px;
-    background-color: #7291ff;
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    padding: 10px 40px;
-  }
-  
-  .main-form__joke {
-    display: flex;
-    width: 680px;
-    padding-bottom: 45px;
-    padding-right: 40px;
-    background-color: #f8f8f8;
-    border-radius: 20px;
-    margin-bottom: 20px;
-  }
-  .joke-message {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    margin-left: 40px;
-    margin-top: 67px;
-  }
-  .joke-text {
-    width: 540px;
-  }
-  .joke-text p {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26px;
-  }
-  
-  .joke-text__link {
-    margin-left: 20px;
-    margin-top: 67px;
-  }
-  a {
-    color: #8ea7ff;
-    margin-bottom: 5px;
-    margin-left: 20px;
-  }
-  
-  span {
-    color: #ababab;
-  }
-  .joke-text__footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 23px;
-  }
-  .joke-paragraph {
-    margin-left: 20px;
-  
-    line-height: 26px;
-  }
-  .footer-time p {
-    font-size: 10px;
-    font-weight: 400;
-    color: #ababab;
-  }
-  .joke-text__footer span {
-    font-size: 10px;
-    font-weight: 500;
-    color: #ababab;
-  }
-  .footer-category {
-    width: 107px;
-    height: 24px;
-    border-radius: 6px;
-    background-color: #ffffff;
-  }
-  .footer-category p {
-    color: #333333;
-    font-size: 10px;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  .joke-favoriteSymbol {
-    margin-top: 40px;
-  }
-  .main-container__favorite-menu {
-    width: 480px;
-    height: 900px;
-    background-color: #f8f8f8;
-    overflow: scroll;
-  }
-  .main-container__favorite-menu h2 {
-    font-size: 20px;
-    font-weight: 400;
-    color: #ababab;
-    margin-left: 20px;
-  }
-  .selected-jokes {
-  }
-  .input {
-    width: 680px;
-    height: 42px;
-    border-radius: 10px;
-    background-color: #fff;
-    border: 2px solid #333333;
-  }
-  
-  .error {
-    color: red;
-    font-size: 12px;
-  }
-  
-  .formFavorite {
-    display: flex;
-    width: 400px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 20px;
-    box-shadow: 0px 4px 6px 0px #0000001a;
-  }
-  
-  .formFavorite .joke-message {
-    margin-left: 20px;
-    margin-top: 47px;
-    width: 40px;
-    height: 40px;
-  }
-  .formFavorite .joke-text {
-    width: 300px;
-    margin-left: 20px;
-    margin-top: 47px;
-  }
-  .formFavorite .joke-text__link {
-    margin-top: 0;
-    margin-left: 0;
-    font-size: 10px;
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
-  .formFavorite .joke-paragraph {
-    margin-left: 0;
-    width: 300px;
-  }
-  .formFavorite .joke-paragraph p {
-    color: #333333;
-    font-size: 14px;
-    font-style: 400;
-    line-height: 20px;
-  
-    margin-bottom: 20px;
-  }
-  
-  .formFavorite .footer-time p {
-    font-size: 10px;
-    font-weight: 400;
-    color: #ababab;
-  }
-  .formFavorite .footer-time span {
-    font-size: 10px;
-    font-weight: 500;
-  }
-  
-  .formFavorite .joke-favoriteSymbol {
-    width: 20px;
-    height: 17px;
-    margin-left: -20px;
-    margin-top: 20px;
-  }
-  
+}
+.menuFavorite{
+ margin: 0 auto;
+}
+
+.input {
+  width: 680px;
+  height: 42px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px solid #333333;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.formFavorite {
+  display: flex;
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 40px;
+  box-shadow: 0px 4px 6px 0px #0000001a;
+}
+.headerFavorite{
+  margin-left: 40px;
+  margin-top: 40px;
+ 
+}
+
+.formFavorite .joke-message {
+  margin-left: 20px;
+  margin-top: 47px;
+  width: 40px;
+  height: 40px;
+}
+.formFavorite .joke-text {
+  width: 300px;
+  margin-left: 20px;
+  margin-top: 47px;
+}
+.formFavorite .joke-text__link {
+  margin-top: 0;
+  margin-left: 0;
+  font-size: 10px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.formFavorite .joke-paragraph {
+  margin-left: 0;
+  width: 300px;
+}
+.formFavorite .joke-paragraph p {
+  color: #333333;
+  font-size: 14px;
+  font-style: 400;
+  line-height: 20px;
+
+  margin-bottom: 20px;
+}
+
+.formFavorite .footer-time p {
+  font-size: 10px;
+  font-weight: 400;
+  color: #ababab;
+}
+.formFavorite .footer-time span {
+  font-size: 10px;
+  font-weight: 500;
+}
+.formFavorite .footer-category{
+  opacity: 0;
+}
+
+.formFavorite .joke-favoriteSymbol {
+  width: 20px;
+  height: 17px;
+  margin-left: -20px;
+  margin-top: 20px;
+}
+
+.imgFavorite{
+  display: none;
+}

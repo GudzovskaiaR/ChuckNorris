@@ -1,24 +1,27 @@
 const btnGetJoke = document.querySelector(".buttonGetJoke");
 const btnRandom = document.querySelector("#radio_1");
-const mainForm = document.querySelector(".main-form");
+const mainForm = document.querySelector(".wrapperJoke");
 const btnCategory = document.querySelector("#radio_2");
 const divSearch = document.querySelector(".searchArea");
 const divCategories = document.querySelector(".main-form__radio-buttons");
 const btnSearch = document.querySelector("#radio_3");
 const divFavorite = document.querySelector(".selected-jokes");
 const arrayFavoriteJoke = JSON.parse(localStorage.getItem("arrayJoke")) || [];
+const btnOpenPopup = document.querySelector('.img');
+const popup = document.querySelector(".main-container__favorite-menu");
+const btnClosePopup = document.querySelector(".imgFavorite");
 
 
-// Удаление активного сердечка
+// Удаление активного сердца
 function removeFavoriteJoke(e) {
   const redFavoriteJoke = e.currentTarget.closest(".main-form__joke");
   const idFavoriteJoke = String(redFavoriteJoke.id);
-  arrayFavoriteJoke.forEach((item, index)=>{
-    if(item.indexOf(idFavoriteJoke)>0){
-      arrayFavoriteJoke.splice(index)
+  arrayFavoriteJoke.forEach((item, index) => {
+    if (item.indexOf(idFavoriteJoke) > 0) {
+      arrayFavoriteJoke.splice(index);
     }
-    });
-    renderFavoriteJoke(arrayFavoriteJoke);
+  });
+  renderFavoriteJoke(arrayFavoriteJoke);
 
   redFavoriteJoke.querySelector(
     ".joke-favoriteSymbol"
@@ -39,31 +42,23 @@ function activeHeart(mainDivHeart) {
 // Добавляем выбранные шутки
 function addFavoriteJoke(e) {
   const favoriteJoke = e.currentTarget
-     .closest(".main-form__joke")
-     
-
+    .closest(".main-form__joke")
     .cloneNode(true);
-
   favoriteJoke.className = "formFavorite";
   favoriteJoke.querySelector(".img-massage").src = "img/message2.png";
   favoriteJoke.querySelector(".heart").src = "img/heart.png";
 
-  
   activeHeart(e.currentTarget.closest(".main-form__joke"));
-  
-  arrayFavoriteJoke.push(favoriteJoke.outerHTML);
- 
-  renderFavoriteJoke(arrayFavoriteJoke);
 
-  
+  arrayFavoriteJoke.push(favoriteJoke.outerHTML);
+
+  renderFavoriteJoke(arrayFavoriteJoke);
 }
 
 // Рендер выбранной шутки
-function renderFavoriteJoke(favoriteJokes){
- 
+function renderFavoriteJoke(favoriteJokes) {
   localStorage.setItem("arrayJoke", JSON.stringify(favoriteJokes));
-  divFavorite.innerHTML =  favoriteJokes.join('');
-  
+  divFavorite.innerHTML = favoriteJokes.join("");
 }
 // Рендер шутки
 function renderJoke(objectJoke) {
@@ -178,12 +173,10 @@ function chosenCategory(e) {
   const currentBtnActive = document.querySelector(".active");
 
   if (currentBtnActive) {
-   
     currentBtnActive.classList.remove("active");
   }
   e.currentTarget.classList.add("active");
 
- 
   btnGetJoke.addEventListener("click", getCategoryJoke);
 }
 // Получение поля поиска
@@ -192,7 +185,7 @@ async function getSearch() {
   btnGetJoke.removeEventListener("click", getRandomJoke);
   divSearch.insertAdjacentHTML(
     "beforeend",
-    `<input class="input"  type="text" placeholder="Free text search..."> <div class="error"></div>`
+    `<input class="input"  type="text" placeholder="Free text search..."><div class="error"></div>`
   );
   btnGetJoke.addEventListener("click", getSearchJoke);
 }
@@ -202,7 +195,17 @@ btnRandom.addEventListener("click", (e) => {
   divCategories.innerHTML = "";
   btnGetJoke.addEventListener("click", getRandomJoke);
 });
+function openPopup (){
+  
+  popup.classList.add('active')
 
+}
+function closePopup() {
+  popup.classList.remove('active')
+}
 btnCategory.addEventListener("click", getCategories);
 btnSearch.addEventListener("click", getSearch);
 renderFavoriteJoke(arrayFavoriteJoke);
+btnOpenPopup.addEventListener('click', openPopup);
+btnClosePopup.addEventListener('click', closePopup);
+
