@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media.css">
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:wght@400;700&family=Signika:wght@500;600&family=Titillium+Web:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>ChuckNorris</title>
+</head>
+<body>
+    <body>
+        <div class="wrapper">
+          <div class="main-container">
+            <div class="main-container__main-menu">
+              <div class="header">
+                <div class="header-h2"><h2>MSI 2020</h2></div>
+                <div class="menu">
+                  <button class="img"><img src="img/popup.png" alt=""></button>
+                  <div class="menu-paragraph"><p>Favourite</p></div>
+                </div></div>
+              
+              <div class="popup"></div>
+              <h1>Hey!</h1>
+              <p>Let’s try to find a joke for you:</p>
+              <form class="main-form" action="">
+                <div class="main-form__radio1">
+                  <input
+                    type="radio"
+                    name="nameRadio"
+                    class="main-form__radio"
+                    id="radio_1"
+                  />
+                  <label for="radio_1" class="main-form__inline-label"
+                    >Random</label
+                  >
+                </div>
+                <div class="main-form__radio2">
+                  <input
+                    type="radio"
+                    name="nameRadio"
+                    class="main-form__radio"
+                    id="radio_2"
+                  />
+                  <label for="radio_2" class="main-form__inline-label"
+                    >From categories</label
+                  >
+                  <div class="main-form__radio-buttons">
+                    
+                  </div>
+                </div>
+                <div class="main-form__radio3">
+                  <input
+                    type="radio"
+                    name="nameRadio"
+                    class="main-form__radio"
+                    id="radio_3"
+                  />
+                  <label for="radio_3" class="main-form__inline-label"
+                    >Search</label
+                  >
+                  <div class="searchArea"></div>
+                
+                </div>
+                <div class="main-form__button">
+                  <button class="buttonGetJoke" type="button">Get a joke</button>
+                </div>
+              </form>
+              <div class="wrapperJoke"></div>
+            </div>
+            <div class="main-container__favorite-menu">
+             
+                
+                <div class="menuFavorite">
+                  <div class="headerFavorite">
+                  <button class="imgFavorite"><img src="img/closepopup.png" alt=""></button>
+                  <div class="menu-paragraph"><p>Favorite</p></div>
+                </div>
+              <div class="selected-jokes"></div>
+            </div>
+          </div>
+        </div>
+    
+     
+  
+    
+
+
+
+
+
+
+        <script  src="main.js" type="module"></script>
+        <script  src="api.js" type="module"></script>
+        <script  src="config.js" type="module"></script>
+        <script  src="selectors.js" type="module"></script>
+        <script  src="popup.js" type="module"></script>
+        <script  src="helpers.js" type="module"></script>
+        <script  src="listener.js" type="module"></script>
+</body>
+</html>
