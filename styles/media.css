@@ -49,7 +49,6 @@
   }
   .joke-text__link {
     margin-top: 47px;
-
     margin-top: 47px;
     font-size: 10px;
   }
@@ -62,7 +61,6 @@
   }
   .joke-paragraph {
     margin-left: 20px;
-
     line-height: 26px;
   }
 
@@ -82,9 +80,9 @@
     position: fixed;
     opacity: 0;
     visibility: hidden;
-   overflow: auto;
+    overflow: auto;
   }
-  .main-container__favorite-menu.active{
+  .main-container__favorite-menu.active {
     opacity: 100;
     visibility: visible;
   }
@@ -94,13 +92,7 @@
     align-items: center;
     margin-left: 238px;
     margin-top: 20px;
-    
-
   }
-  /* .menuFavorite {
-    display: flex;
-    align-items: center;
-  } */
 
   .header-h2 {
     opacity: 0;
@@ -126,8 +118,6 @@
   }
   .formFavorite .joke-text {
     width: 240px;
-    /* margin-left: 20px;
-        margin-top: 47px; */
   }
   .formFavorite .joke-paragraph {
     margin-left: 0;
@@ -138,9 +128,9 @@
     font-size: 14px;
     font-style: 400;
     line-height: 20px;
-margin-bottom: 0;
+    margin-bottom: 0;
   }
-  .formFavorite .footer-time{
+  .formFavorite .footer-time {
     margin-bottom: 20px;
   }
   .formFavorite .footer-time p {
@@ -148,8 +138,8 @@ margin-bottom: 0;
     font-weight: 400;
     color: #ababab;
   }
-  .formFavorite .footer-category{
-   display: none;
+  .formFavorite .footer-category {
+    display: none;
   }
   .formFavorite .joke-favoriteSymbol {
     width: 20px;
@@ -158,8 +148,7 @@ margin-bottom: 0;
     margin-right: -20px;
   }
 
-  .formFavorite .selected-jokes{
+  .formFavorite .selected-jokes {
     overflow: scroll;
   }
-
 }

@@ -7,10 +7,9 @@ const divCategories = document.querySelector(".main-form__radio-buttons");
 const btnSearch = document.querySelector("#radio_3");
 const divFavorite = document.querySelector(".selected-jokes");
 const arrayFavoriteJoke = JSON.parse(localStorage.getItem("arrayJoke")) || [];
-const btnOpenPopup = document.querySelector('.img');
+const btnOpenPopup = document.querySelector(".img");
 const popup = document.querySelector(".main-container__favorite-menu");
 const btnClosePopup = document.querySelector(".imgFavorite");
-
 
 // Удаление активного сердца
 function removeFavoriteJoke(e) {
@@ -195,17 +194,15 @@ btnRandom.addEventListener("click", (e) => {
   divCategories.innerHTML = "";
   btnGetJoke.addEventListener("click", getRandomJoke);
 });
-function openPopup (){
-  
-  popup.classList.add('active')
-
+// Функции попап
+function openPopup() {
+  popup.classList.add("active");
 }
 function closePopup() {
-  popup.classList.remove('active')
+  popup.classList.remove("active");
 }
 btnCategory.addEventListener("click", getCategories);
 btnSearch.addEventListener("click", getSearch);
 renderFavoriteJoke(arrayFavoriteJoke);
-btnOpenPopup.addEventListener('click', openPopup);
-btnClosePopup.addEventListener('click', closePopup);
-
+btnOpenPopup.addEventListener("click", openPopup);
+btnClosePopup.addEventListener("click", closePopup);
